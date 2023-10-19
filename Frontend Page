@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room and Kanban Task Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 56.25vw; /* 16:9 aspect ratio */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .chat-room {
+            width: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .chat-room form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-room h1 {
+            font-size: 30px;
+        }
+
+        .camera-icon::before {
+            content: "\1F4F7"; /* Unicode for camera icon */
+            float: right;
+            margin-left: 10px;
+        }
+
+        .chat-room .search {
+            margin-top: 220px;
+            margin-bottom: 15px; /* Add space below the search box */
+        }
+
+        .chat-room .search input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid #cccccc;
+            border-radius: 15px;
+            outline: none;
+        }
+
+        .chat-room .send-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .chat-room .send-button:hover {
+            background-color: #45a049;
+        }
+
+        .task-board {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .task-board h1 {
+            font-size: 30px;
+        }
+
+        .kanban-row {
+            display: flex;
+        }
+
+        /* Style for Kanban columns */
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        .column h2 {
+            font-size: 15px;
+        }
+
+        /* Style for individual tasks */
+        .task {
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-room">
+            <form>
+                <h1>Chat Room <span class="camera-icon"></span></h1>
+                <div class="search">
+                    <input type="text" id="search" placeholder="Write a message...">
+                </div>
+                <button class="send-button" type="button" onclick="showAlert()">Send</button>
+            </form>
+        </div>
+        <div class="task-board">
+            <h1>Task Board</h1>
+            <div class="kanban-row">
+                <div class="column">
+                    <h2>To Do</h2>
+                    <div class="task">
+                        Task 1
+                    </div>
+                    <div class="task">
+                        Task 2
+                    </div>
+                    <div class="task">
+                        Task 3
+                    </div>
+                </div>
+                <div class="column">
+                    <h2>In Progress</h2>
+                    <div class="task">
+                        Task 4
+                    </div>
+                    <div class="task">
+                        Task 5
+                    </div>
+                  	<div class="task">
+                        Task 6
+                    </div>
+                </div>
+                <div class="column">
+                    <h2>Done</h2>
+                    <div class="task">
+                        Task 6
+                    </div>
+                    <div class="task">
+                        Task 7
+                    </div>
+                  	<div class="task">
+                        Task 8
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showAlert() {
+            alert('Message Sent');
+        }
+    </script>
+</body>
+</html>
